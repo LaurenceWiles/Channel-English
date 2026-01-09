@@ -23,18 +23,26 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/LaurenceWiles/Channel-English.git
+``
 
 Install dependencies:
 
+```bash
 npm install
+``
 
 Run the development server:
 
+
+```bash
 npm run dev
+``
 
 The app will be available at:
 
+```bash
 http://localhost:5173
+``
 
 ## Future Improvements
 
