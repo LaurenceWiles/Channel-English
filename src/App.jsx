@@ -1,9 +1,10 @@
-import "./App.css";
+import "./styles/App.css";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-      <h1>Channel English Education</h1>
+      <Home />
     </>
   );
 }
