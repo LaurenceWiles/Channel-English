@@ -1,0 +1,74 @@
+/* ===== HEADER ===== */
+header {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container for logo + nav */
+.header__container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.header__logo {
+  height: auto;
+  max-height: 5rem;
+  width: auto;
+  padding-top: 0.5rem;
+}
+
+/* Logo link wrapper */
+.header__logo-link {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation */
+.header__nav {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav li a {
+  text-decoration: none;
+  color: #1d4ed8;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.header__nav li a:hover {
+  color: #2563eb;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .header__container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .header__nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .header__logo {
+    max-height: 40px;
+  }
+}
