@@ -1,12 +1,29 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import logo2 from "../assets/logo2.png";
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navRef = useRef(null);
 
   const toggleMobileMenu = () => setMobileMenuOpen(!isMobileMenuOpen);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header>
@@ -27,7 +44,10 @@ const Header = () => {
           &#9776;
         </button>
 
-        <nav className={`header__nav ${isMobileMenuOpen ? "open" : ""}`}>
+        <nav
+          ref={navRef}
+          className={`header__nav ${isMobileMenuOpen ? "open" : ""}`}
+        >
           <ul>
             <li>
               <Link to="/" onClick={() => setMobileMenuOpen(false)}>

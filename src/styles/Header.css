@@ -76,23 +76,23 @@ header {
   }
 
   .header__burger {
-    display: block; /* show burger icon */
+    display: block;
   }
 
   .header__nav {
     position: absolute;
-    top: 100%; /* below header */
+    top: 100%;
     right: 0;
     background: #ffffff;
     width: 200px;
-    display: none; /* hidden by default */
+    display: none;
     flex-direction: column;
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .header__nav.open {
-    display: flex; /* show when toggled */
+    display: flex;
   }
 
   .header__nav ul {
