@@ -1,5 +1,6 @@
+import { Link } from "react-router";
 import "../styles/Home.css";
-import classroomImage from "../assets/classroomImage.png";
+import classroomImage2 from "../assets/classroomImage2.png";
 
 const Home = () => {
   return (
@@ -13,14 +14,14 @@ const Home = () => {
             teachers and schools in delivering clear, effective lessons.
           </p>
 
-          <a href="/contact" className="home__cta">
+          <Link to="/contact" className="home__cta">
             Get in touch
-          </a>
+          </Link>
         </div>
 
         <div className="home__hero-image">
           <img
-            src={classroomImage}
+            src={classroomImage2}
             alt="English teaching materials in a classroom setting"
           />
         </div>
