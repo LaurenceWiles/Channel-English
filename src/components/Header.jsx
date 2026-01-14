@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import HeaderNav from "./HeaderNav";
 import "../styles/Header.css";
 import logo2 from "../assets/logo2.png";
 
@@ -43,29 +44,11 @@ const Header = () => {
         >
           &#9776;
         </button>
-
-        <nav
-          ref={navRef}
-          className={`header__nav ${isMobileMenuOpen ? "open" : ""}`}
-        >
-          <ul>
-            <li>
-              <Link to="/" onClick={() => setMobileMenuOpen(false)}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" onClick={() => setMobileMenuOpen(false)}>
-                About
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <HeaderNav
+          isOpen={isMobileMenuOpen}
+          navRef={navRef}
+          onLinkClick={() => setMobileMenuOpen(false)}
+        />
       </div>
     </header>
   );
