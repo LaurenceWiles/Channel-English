@@ -15,13 +15,13 @@ const About = () => {
         </div>
 
         <div className="about__content">
-          <h1>About Me</h1>
+          <h1>About me</h1>
 
           <p>
-            Hi, I’m Sínead, the creator of{" "}
-            <strong>English Channel Education</strong>, a service dedicated to
-            supporting English teachers and schools with practical, bespoke, and
-            research-informed English language teaching materials.
+            Hello, I’m Sinéad, the creator of English Channel Education, a
+            service dedicated to supporting English teachers and schools with
+            practical, bespoke, and research-informed English language teaching
+            materials.
           </p>
 
           <p>
@@ -51,12 +51,6 @@ const About = () => {
             My work is grounded in real classroom needs. Each resource is
             carefully structured to save teachers time while maintaining
             clarity, accuracy, and simplicity for learners.
-          </p>
-
-          <p>
-            Through English Channel Education, my goal is to support educators
-            with materials they can trust — resources that are pedagogically
-            sound, visually clear, and easy to adapt.
           </p>
         </div>
 
