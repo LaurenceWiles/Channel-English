@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "../styles/Contact.css";
 
@@ -11,6 +11,27 @@ const Contact = () => {
 
   const [status, setStatus] = useState("");
   const [isSending, setIsSending] = useState(false);
+
+  const messageRef = useRef(null);
+
+  useEffect(() => {
+    if (!status) return;
+
+    const timer = setTimeout(() => {
+      setStatus("");
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [status]);
+
+  useEffect(() => {
+    if (status && messageRef.current) {
+      messageRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, [status]);
 
   const handleChange = (e) => {
     setFormData({
@@ -94,13 +115,13 @@ const Contact = () => {
         </button>
 
         {status === "success" && (
-          <p className="contact__success">
-            Thank you — your message has been sent.
+          <p ref={messageRef} className="contact__success" role="status">
+            Thank you, your message has been sent.
           </p>
         )}
 
         {status === "error" && (
-          <p className="contact__error">
+          <p ref={messageRef} className="contact__error" role="alert">
             Sorry, something went wrong. Please try again.
           </p>
         )}
