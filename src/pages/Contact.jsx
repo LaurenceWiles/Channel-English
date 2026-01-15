@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import FormStatusMessage from "../components/FormStatusMessage";
 import "../styles/Contact.css";
 
 const Contact = () => {
@@ -137,17 +138,7 @@ const Contact = () => {
           {isSending ? "Sending..." : "Send message"}
         </button>
 
-        {status === "success" && (
-          <p ref={messageRef} className="contact__success" role="status">
-            Thank you, your message has been sent.
-          </p>
-        )}
-
-        {status === "error" && (
-          <p ref={messageRef} className="contact__error" role="alert">
-            Sorry, something went wrong. Please try again.
-          </p>
-        )}
+        <FormStatusMessage status={status} messageRef={messageRef} />
       </form>
     </main>
   );
