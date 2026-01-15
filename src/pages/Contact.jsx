@@ -50,7 +50,9 @@ const Contact = () => {
     <main className="contact">
       <h1>Contact</h1>
       <p className="contact__intro">
-        If you’d like to get in touch, please leave your details below.
+        I’d love to hear from you. Feel free to write in English, Spanish
+        (Castellano), or Catalan, and I’ll get back to you by email as soon as
+        possible.
       </p>
 
       <form className="contact__form" onSubmit={handleSubmit}>
