@@ -73,3 +73,11 @@
   color: #991b1b;
   border: 1px solid #fecaca;
 }
+
+.contact__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
