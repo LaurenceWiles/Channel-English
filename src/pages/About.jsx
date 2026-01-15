@@ -15,25 +15,30 @@ const About = () => {
         </div>
 
         <div className="about__content">
-          <h1>About Marie</h1>
+          <h1>About Me</h1>
 
           <p>
-            Hi, I’m Marie — the creator of{" "}
-            <strong>English Channel Education</strong>.
-          </p>
-
-          <p>
-            I support English teachers and schools with practical, bespoke,
-            research-based teaching materials designed to make high-quality
-            English language teaching clearer, easier, and more effective.
+            Hi, I’m Sínead, the creator of{" "}
+            <strong>English Channel Education</strong>, a service dedicated to
+            supporting English teachers and schools with practical, bespoke, and
+            research-informed English language teaching materials.
           </p>
 
           <p>
             As a published researcher in phonology with extensive experience in
-            English language education, I create ready-to-use resources —
-            including PDF and PowerPoint combinations — that help teachers
-            confidently teach key language areas such as pronunciation, grammar,
-            and language skills.
+            English language education, I design ready-to-use resources that are
+            pedagogically sound, visually clear, and easy to adapt. My materials
+            typically combine PDFs and PowerPoint slides, and I also specialise
+            in resources for advanced learners with Spanish as a first language,
+            particularly to support accurate pronunciation.
+          </p>
+
+          <p>
+            I began my career as a journalist in the UK, which explains my love
+            of language and writing. English Channel Education is very much a
+            one-person operation, so if you have an idea, need bespoke
+            materials, or are interested in collaborating, I’d love to hear from
+            you. Feel free to pop over to my contacts page and say hello!
           </p>
         </div>
       </section>
