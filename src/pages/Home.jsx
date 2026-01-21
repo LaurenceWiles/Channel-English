@@ -14,9 +14,14 @@ const Home = () => {
             teachers and schools in delivering clear, effective lessons.
           </p>
 
-          <Link to="/contact" className="home__cta">
-            Get in touch
-          </Link>
+          <div className="home__cta-row">
+            <Link to="/about" className="home__cta">
+              Learn more
+            </Link>
+            <Link to="/contact" className="home__cta-secondary">
+              Get in touch
+            </Link>
+          </div>
         </div>
 
         <div className="home__hero-image">

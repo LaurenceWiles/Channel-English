@@ -28,7 +28,14 @@
   color: #4b5563;
 }
 
-/* CTA button */
+/* CTA buttons */
+.home__cta-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .home__cta {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -42,6 +49,20 @@
 
 .home__cta:hover {
   background-color: #2563eb;
+}
+
+.home__cta-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #1d4ed8;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #1d4ed8;
+}
+
+.home__cta-secondary:hover {
+  background-color: rgba(29, 78, 216, 0.06);
 }
 
 /* Image */
@@ -60,5 +81,9 @@
 
   .home__hero-content h1 {
     font-size: 2rem;
+  }
+
+  .home__cta-row {
+    justify-content: center;
   }
 }
