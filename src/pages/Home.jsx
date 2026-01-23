@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import "../styles/Home.css";
 import classroomImage2 from "../assets/classroomImage2.png";
 
