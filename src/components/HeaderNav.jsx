@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 
 const HeaderNav = ({ isOpen, onLinkClick, navRef }) => {
   return (
-    <nav ref={navRef} className={`header__nav ${isOpen ? "open" : ""}`}>
+    <nav
+      id="primary-navigation"
+      ref={navRef}
+      className={`header__nav ${isOpen ? "open" : ""}`}
+    >
       <ul>
         <li>
           <Link to="/" onClick={onLinkClick}>

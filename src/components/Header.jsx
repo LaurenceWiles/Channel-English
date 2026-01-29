@@ -40,10 +40,40 @@ const Header = () => {
         <button
           className="header__burger"
           onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="primary-navigation"
         >
-          &#9776;
+          <svg
+            className="header__burger-icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            {isMobileMenuOpen ? (
+              // X / close icon
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            ) : (
+              // hamburger icon
+              <path
+                d="M4 6h16M4 12h16M4 18h16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            )}
+          </svg>
         </button>
+
         <HeaderNav
           isOpen={isMobileMenuOpen}
           navRef={navRef}
