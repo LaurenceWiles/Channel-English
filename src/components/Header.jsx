@@ -7,12 +7,18 @@ import logo2 from "../assets/logo2.png";
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const toggleMobileMenu = () => setMobileMenuOpen(!isMobileMenuOpen);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
+      if (
+        navRef.current &&
+        !navRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
         setMobileMenuOpen(false);
       }
     };
@@ -38,6 +44,7 @@ const Header = () => {
         </Link>
 
         <button
+          ref={buttonRef}
           className="header__burger"
           onClick={toggleMobileMenu}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
