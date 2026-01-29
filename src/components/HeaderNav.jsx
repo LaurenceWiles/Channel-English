@@ -6,6 +6,7 @@ const HeaderNav = ({ isOpen, onLinkClick, navRef }) => {
       id="primary-navigation"
       ref={navRef}
       className={`header__nav ${isOpen ? "open" : ""}`}
+      aria-label="Primary navigation"
     >
       <ul>
         <li>
