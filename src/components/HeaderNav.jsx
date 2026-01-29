@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const HeaderNav = ({ isOpen, onLinkClick, navRef }) => {
   return (
@@ -10,19 +10,38 @@ const HeaderNav = ({ isOpen, onLinkClick, navRef }) => {
     >
       <ul>
         <li>
-          <Link to="/" onClick={onLinkClick}>
+          <NavLink
+            to="/"
+            onClick={onLinkClick}
+            className={({ isActive }) =>
+              isActive ? "header__link active" : "header__link"
+            }
+            end
+          >
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/about" onClick={onLinkClick}>
+          <NavLink
+            to="/about"
+            onClick={onLinkClick}
+            className={({ isActive }) =>
+              isActive ? "header__link active" : "header__link"
+            }
+          >
             About
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/contact" onClick={onLinkClick}>
+          <NavLink
+            to="/contact"
+            onClick={onLinkClick}
+            className={({ isActive }) =>
+              isActive ? "header__link active" : "header__link"
+            }
+          >
             Contact
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
