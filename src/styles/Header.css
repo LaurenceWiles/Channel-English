@@ -62,14 +62,17 @@ header {
   list-style: none;
 }
 
-.header__nav li a {
+.header__link {
+  display: inline-block;
   text-decoration: none;
   color: #1d4ed8;
   font-weight: 500;
   transition: color 0.2s;
+  padding: 0.25rem 0.4rem;
+  border-radius: 6px;
 }
 
-.header__nav li a:hover {
+.header__link:hover {
   color: #2563eb;
 }
 
