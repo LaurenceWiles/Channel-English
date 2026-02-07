@@ -11,6 +11,8 @@ const About = () => {
             src={marieImage}
             alt="Marie, creator of English Channel Education"
             className="about__image"
+            width="1224"
+            height="1406"
           />
         </div>
 
