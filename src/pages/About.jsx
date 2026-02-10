@@ -61,6 +61,8 @@ const About = () => {
             src={materialsImage}
             alt="Example of English Channel Education teaching materials"
             className="about__materials-image"
+            width="1536"
+            height="1024"
           />
         </div>
       </section>

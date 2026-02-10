@@ -66,10 +66,16 @@
 }
 
 /* Image */
-.home__hero-image img {
+.home__hero-image-wrapper {
+  aspect-ratio: 3 / 2;
+  width: 100%;
+}
+
+.home__hero-image {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 /* ===== RESPONSIVE ===== */

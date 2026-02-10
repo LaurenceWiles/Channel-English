@@ -24,10 +24,13 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="home__hero-image">
+        <div className="home__hero-image-wrapper">
           <img
             src={classroomImage2}
             alt="English teaching materials in a classroom setting"
+            className="home__hero-image"
+            width="1536"
+            height="1024"
           />
         </div>
       </section>

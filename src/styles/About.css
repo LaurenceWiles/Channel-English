@@ -44,6 +44,11 @@
   align-items: center;
 }
 
+.about__materials-image-wrapper {
+  aspect-ratio: 3 / 2;
+  width: 100%;
+}
+
 .about__materials-image {
   width: 100%;
   height: auto;
