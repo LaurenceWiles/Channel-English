@@ -7,12 +7,18 @@ import logo2 from "../assets/logo2.png";
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const toggleMobileMenu = () => setMobileMenuOpen(!isMobileMenuOpen);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
+      if (
+        navRef.current &&
+        !navRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
         setMobileMenuOpen(false);
       }
     };
@@ -23,6 +29,22 @@ const Header = () => {
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [isMobileMenuOpen]);
 
@@ -38,12 +60,43 @@ const Header = () => {
         </Link>
 
         <button
+          ref={buttonRef}
           className="header__burger"
           onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="primary-navigation"
         >
-          &#9776;
+          <svg
+            className="header__burger-icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            {isMobileMenuOpen ? (
+              // X / close icon
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            ) : (
+              // hamburger icon
+              <path
+                d="M4 6h16M4 12h16M4 18h16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            )}
+          </svg>
         </button>
+
         <HeaderNav
           isOpen={isMobileMenuOpen}
           navRef={navRef}

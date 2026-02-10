@@ -52,6 +52,12 @@ const Contact = () => {
       return;
     }
 
+    const trimmedMessage = formData.message.trim();
+    if (!trimmedMessage) {
+      setStatus("error");
+      return;
+    }
+
     setIsSending(true);
     setStatus("");
 
@@ -62,9 +68,9 @@ const Contact = () => {
         {
           from_name: formData.name,
           reply_to: formData.email,
-          message: formData.message,
+          message: trimmedMessage,
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
 
       setStatus("success");
