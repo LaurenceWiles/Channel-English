@@ -49,7 +49,7 @@ const Header = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <header>
+    <header className="header">
       <div className="header__container">
         <Link to="/" className="header__logo-link">
           <img

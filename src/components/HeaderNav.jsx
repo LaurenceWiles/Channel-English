@@ -43,6 +43,17 @@ const HeaderNav = ({ isOpen, onLinkClick, navRef }) => {
             Contact
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/samples"
+            onClick={onLinkClick}
+            className={({ isActive }) =>
+              isActive ? "header__link active" : "header__link"
+            }
+          >
+            Samples
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
