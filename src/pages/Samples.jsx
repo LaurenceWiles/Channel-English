@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "../styles/Samples.css";
-import introVideo from "../assets/@EnglishChannelEducation.mp4";
-import videoPoster from "../assets/englishchanneleducationposter.jpg";
+import introVideo from "../assets/introvideo.mp4";
+import videoPoster from "../assets/poster.jpg";
 import sampleCover from "../assets/samples/sample-cover.png";
 import sampleExplanation from "../assets/samples/sample-explanation.png";
 import sampleOutcomes from "../assets/samples/sample-outcomes.png";
