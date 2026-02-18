@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 import "../styles/Samples.css";
+import introVideo from "../assets/@EnglishChannelEducation.mp4";
+import videoPoster from "../assets/englishchanneleducationposter.jpg";
 import sampleCover from "../assets/samples/sample-cover.png";
 import sampleExplanation from "../assets/samples/sample-explanation.png";
 import sampleOutcomes from "../assets/samples/sample-outcomes.png";
@@ -55,6 +56,22 @@ const Samples = () => {
           pages are watermarked and provided as a viewing sample only.
         </p>
       </header>
+
+      <section className="samples__video-section" aria-label="Video preview">
+        <div className="samples__video-wrapper">
+          <video
+            className="samples__video"
+            src={introVideo}
+            poster={videoPoster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+            preload="metadata"
+          />
+        </div>
+      </section>
 
       <section className="samples__gallery" aria-label="Sample pages gallery">
         {items.map((item, index) => (
