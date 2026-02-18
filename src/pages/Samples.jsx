@@ -80,15 +80,6 @@ const Samples = () => {
         ))}
       </section>
 
-      <div className="samples__cta">
-        <p className="samples__cta-text">
-          Interested in the full pack or a bespoke version for your classroom?
-        </p>
-        <Link to="/contact" className="samples__cta-button">
-          Request the full pack
-        </Link>
-      </div>
-
       {activeIndex !== null && (
         <div
           className="samples__modal"
