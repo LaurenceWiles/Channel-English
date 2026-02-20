@@ -10,6 +10,8 @@ import SamplesGallery from "../components/SamplesGallery";
 import SamplesModal from "../components/SamplesModal";
 
 const Samples = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   const items = useMemo(
     () => [
       { src: sampleCover, alt: "Sample materials cover page" },
@@ -61,19 +63,34 @@ const Samples = () => {
 
       <section className="samples__video-section" aria-label="Video preview">
         <div className="samples__video-wrapper">
-          <video
-            className="samples__video"
-            src={introVideo}
-            poster={videoPoster}
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls
-            preload="metadata"
-          />
+          {!isPlaying && (
+            <button
+              type="button"
+              className="samples__video-poster"
+              onClick={() => setIsPlaying(true)}
+              aria-label="Play video"
+            >
+              <img
+                src={videoPoster}
+                alt="Preview of materials video"
+                className="samples__video-poster-img"
+              />
+              <span className="samples__video-play-icon" />
+            </button>
+          )}
+
+          {isPlaying && (
+            <video
+              className="samples__video"
+              src={introVideo}
+              controls
+              autoPlay
+              playsInline
+            />
+          )}
         </div>
       </section>
+
       <SamplesGallery items={items} onOpen={openModal} />
       <SamplesModal
         items={items}
